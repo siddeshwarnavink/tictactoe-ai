@@ -7,10 +7,10 @@ import com.sidapps.tictactoeai.data.Gamestate
 fun main() {
 
     val gameBoard = GameBoard()
-//    gameBoard.setCellState(1, 1, CellState.X)
-    gameBoard.setCellState(0, 0, CellState.X)
-    gameBoard.setCellState(1, 1, CellState.O)
-    gameBoard.setCellState(0, 2, CellState.X)
+    gameBoard.setCellState(1, 1, CellState.X)
+//    gameBoard.setCellState(0, 0, CellState.X)
+//    gameBoard.setCellState(1, 1, CellState.O)
+//    gameBoard.setCellState(0, 2, CellState.X)
 
 //    println(gameBoard)
 

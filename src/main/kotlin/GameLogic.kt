@@ -103,25 +103,26 @@ object GameLogic {
             return rootNode
 
         val currentPlayer = if (gameState.isPlayer) CellState.X else CellState.O
-        val nextStateList = mutableListOf<GameBoard>()
+        val nextStateList = mutableListOf<Pair<GameBoard, Int>>()
 
         for (i in 0 until 3) {
             for (j in 0 until 3) {
                 if (gameState.gameBoard.getCellState(i, j) == CellState.EMPTY) {
                     val nextBoard = gameState.gameBoard.copy()
                     nextBoard.setCellState(i, j, currentPlayer)
-                    nextStateList.add(nextBoard)
+
+                    val heuristicValue = calculateHeuristicValue(nextBoard)
+                    nextStateList.add(Pair(nextBoard, heuristicValue))
                 }
             }
         }
 
-        for (nextBoard in nextStateList) {
+        nextStateList.sortByDescending { it.second }
+
+        for ((nextBoard, heuristicValue) in nextStateList) {
             val nextState = Gamestate(!gameState.isPlayer, nextBoard)
             val childNode = makePredictions(nextState, depth + 1, maxDepth)
-
-            val heuristicValue = calculateHeuristicValue(nextBoard)
             childNode.heuristicValue = heuristicValue
-
             rootNode.addChild(childNode)
         }
 
