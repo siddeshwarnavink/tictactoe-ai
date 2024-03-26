@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "1.9.21"
 }
 
-group = "org.sidapps.tictactoeai"
+group = "com.sidapps.tictactoeai"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation(kotlin("test"))
 }
 
 tasks.test {

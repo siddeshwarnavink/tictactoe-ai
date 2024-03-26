@@ -1,4 +1,4 @@
-package org.sidapps.tictactoeai.data
+package com.sidapps.tictactoeai.data
 
 data class GameBoard(val board: Array<Array<CellState>> = Array(3) { Array(3) { CellState.EMPTY } }) {
     fun setCellState(x: Int, y: Int, state: CellState) {

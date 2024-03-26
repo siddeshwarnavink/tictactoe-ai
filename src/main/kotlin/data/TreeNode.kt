@@ -1,4 +1,4 @@
-package org.sidapps.tictactoeai.data
+package com.sidapps.tictactoeai.data
 
 import java.io.File
 

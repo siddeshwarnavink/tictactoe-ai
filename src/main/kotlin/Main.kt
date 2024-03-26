@@ -1,8 +1,8 @@
-package org.sidapps.tictactoeai
+package com.sidapps.tictactoeai
 
-import org.sidapps.tictactoeai.data.CellState
-import org.sidapps.tictactoeai.data.GameBoard
-import org.sidapps.tictactoeai.data.Gamestate
+import com.sidapps.tictactoeai.data.CellState
+import com.sidapps.tictactoeai.data.GameBoard
+import com.sidapps.tictactoeai.data.Gamestate
 
 fun main() {
 
