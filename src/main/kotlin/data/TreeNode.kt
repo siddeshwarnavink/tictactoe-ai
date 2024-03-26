@@ -2,7 +2,7 @@ package org.sidapps.tictactoeai.data
 
 import java.io.File
 
-data class TreeNode<T>(val value: T) {
+data class TreeNode<T>(val value: T, var heuristicValue: Int = 0) {
     var parent:TreeNode<T>? = null
     val children:MutableList<TreeNode<T>> = mutableListOf()
 
@@ -26,7 +26,7 @@ data class TreeNode<T>(val value: T) {
     }
 
     private fun toDotStringRecursive(stringBuilder: StringBuilder) {
-        stringBuilder.append("${hashCode()} [label=\"$value\"];\n")
+        stringBuilder.append("${hashCode()} [label=\"${value.toString().replace("\"", "\\\"")}\nHeuristic: $heuristicValue\"];\n")
         for (child in children) {
             stringBuilder.append("${hashCode()} -> ${child.hashCode()};\n")
             child.toDotStringRecursive(stringBuilder)
