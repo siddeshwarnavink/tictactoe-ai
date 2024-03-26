@@ -1,5 +1,7 @@
 package org.sidapps.tictactoeai.data
 
+import java.io.File
+
 data class TreeNode<T>(val value: T) {
     var parent:TreeNode<T>? = null
     val children:MutableList<TreeNode<T>> = mutableListOf()
@@ -15,5 +17,24 @@ data class TreeNode<T>(val value: T) {
             s += " {" + children.map { it.toString() } + " }"
         }
         return s
+    }
+
+    fun toDotString(): String {
+        val stringBuilder = StringBuilder()
+        toDotStringRecursive(stringBuilder)
+        return stringBuilder.toString()
+    }
+
+    private fun toDotStringRecursive(stringBuilder: StringBuilder) {
+        stringBuilder.append("${hashCode()} [label=\"$value\"];\n")
+        for (child in children) {
+            stringBuilder.append("${hashCode()} -> ${child.hashCode()};\n")
+            child.toDotStringRecursive(stringBuilder)
+        }
+    }
+
+    fun exportToDotFile(fileName: String) {
+        val dotString = toDotString()
+        File(fileName).writeText("digraph Tree {\n$dotString}")
     }
 }
