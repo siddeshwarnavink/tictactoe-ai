@@ -17,6 +17,9 @@ fun main() {
     val gameState = Gamestate(false, gameBoard)
     val predictions = GameLogic.makePredictions(gameState)
 
+    val prunedPredictions = GameLogic.alphaBetaPruning(predictions, 3)
+
 //    println(predictions)
-    predictions.exportToDotFile("graph.dot")
+//    predictions.exportToDotFile("graph.dot")
+    prunedPredictions.exportToDotFile("graph.dot")
 }

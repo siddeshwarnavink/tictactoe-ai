@@ -4,6 +4,8 @@ import com.sidapps.tictactoeai.data.CellState
 import com.sidapps.tictactoeai.data.GameBoard
 import com.sidapps.tictactoeai.data.Gamestate
 import com.sidapps.tictactoeai.data.TreeNode
+import kotlin.math.max
+import kotlin.math.min
 
 object GameLogic {
     fun countPotentialWins(gameBoard: GameBoard, player: CellState): Int {
@@ -125,4 +127,48 @@ object GameLogic {
 
         return rootNode
     }
+
+    fun minimax(node: TreeNode<GameBoard>, depth: Int, alpha: Int, beta: Int, maximizingPlayer: Boolean): Int {
+        var alphaLocal = alpha
+        var betaLocal = beta
+
+        if (depth == 0 || node.children.isEmpty())
+            return node.heuristicValue
+
+        if (maximizingPlayer) {
+            var value = Int.MIN_VALUE
+            for (child in node.children) {
+                value = max(value, minimax(child, depth - 1, alphaLocal, betaLocal, false))
+                alphaLocal = max(alphaLocal, value)
+                if (betaLocal <= alphaLocal)
+                    break
+            }
+            return value
+        } else {
+            var value = Int.MAX_VALUE
+            for (child in node.children) {
+                value = min(value, minimax(child, depth - 1, alphaLocal, betaLocal, true))
+                betaLocal = min(betaLocal, value)
+                if (betaLocal <= alphaLocal)
+                    break
+            }
+            return value
+        }
+    }
+
+    fun alphaBetaPruning(node: TreeNode<GameBoard>, depth: Int): TreeNode<GameBoard> {
+        var bestValue = Int.MIN_VALUE
+        var bestChild: TreeNode<GameBoard>? = null
+        val alpha = Int.MIN_VALUE
+        val beta = Int.MAX_VALUE
+        for (child in node.children) {
+            val value = minimax(child, depth - 1, alpha, beta, false)
+            if (value > bestValue) {
+                bestValue = value
+                bestChild = child
+            }
+        }
+        return bestChild ?: throw IllegalStateException("No valid moves found")
+    }
+
 }
