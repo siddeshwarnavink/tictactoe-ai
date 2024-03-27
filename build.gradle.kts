@@ -11,13 +11,13 @@ repositories {
 }
 
 val javafxVersion = "22"
-val javafxModules = listOf("javafx.controls", "javafx.graphics")
 
 dependencies {
     testImplementation(kotlin("test"))
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.23")
     implementation("no.tornado:tornadofx:1.7.20")
+    implementation("org.openjfx:javafx-fxml:$javafxVersion")
     implementation("org.openjfx:javafx-controls:$javafxVersion")
     implementation("org.openjfx:javafx-graphics:$javafxVersion")
 }

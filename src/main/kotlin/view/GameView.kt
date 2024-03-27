@@ -1,11 +1,8 @@
 package com.sidapps.tictactoeai.view
 
+import javafx.scene.layout.VBox
 import tornadofx.View
-import tornadofx.label
-import tornadofx.vbox
 
 class GameView : View() {
-    override val root = vbox {
-        label("Hello world")
-    }
+    override val root: VBox by fxml("/GameView.fxml")
 }
