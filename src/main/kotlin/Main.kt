@@ -3,6 +3,7 @@ package com.sidapps.tictactoeai
 import com.sidapps.tictactoeai.data.CellState
 import com.sidapps.tictactoeai.data.GameBoard
 import com.sidapps.tictactoeai.data.Gamestate
+import com.sidapps.tictactoeai.logic.GameLogic
 
 fun main() {
 

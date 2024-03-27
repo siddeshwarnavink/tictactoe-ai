@@ -1,9 +1,10 @@
-package com.sidapps.tictactoeai
+package com.sidapps.tictactoeai.logic
 
 import com.sidapps.tictactoeai.data.CellState
 import com.sidapps.tictactoeai.data.GameBoard
 import com.sidapps.tictactoeai.data.Gamestate
 import com.sidapps.tictactoeai.data.TreeNode
+import com.sidapps.tictactoeai.exception.NoPredictionException
 import kotlin.math.max
 import kotlin.math.min
 
@@ -169,7 +170,7 @@ object GameLogic {
                 bestChild = child
             }
         }
-        return bestChild ?: throw IllegalStateException("No valid moves found")
+        return bestChild ?: throw NoPredictionException()
     }
 
 }

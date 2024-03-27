@@ -3,7 +3,7 @@ import kotlin.test.assertEquals
 
 import com.sidapps.tictactoeai.data.GameBoard
 import com.sidapps.tictactoeai.data.CellState
-import com.sidapps.tictactoeai.GameLogic
+import com.sidapps.tictactoeai.logic.GameLogic
 import com.sidapps.tictactoeai.data.TreeNode
 
 class GameLogicTest {
