@@ -1,5 +1,77 @@
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<VBox>
-    <Label>Hello world</Label>
-</VBox>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <Label prefHeight="33.0" prefWidth="148.0" text="X to play" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS">
+      <GridPane.margin>
+         <Insets bottom="6.0" />
+      </GridPane.margin>
+      <padding>
+         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+      </padding>
+      <font>
+         <Font size="18.0" />
+      </font></Label>
+
+    <Button text="X" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+    <Button text="  " GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+    <Button text="  " GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+    <Button text="  " GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+    <Button text="O" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+    <Button text="  " GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+
+    <Button text="  " GridPane.columnIndex="0" GridPane.rowIndex="3">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+    <Button text="  " GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+    <Button text="  " GridPane.columnIndex="2" GridPane.rowIndex="3">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

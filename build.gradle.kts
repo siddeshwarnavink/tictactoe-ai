@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.9.21"
+    application
     id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
@@ -35,4 +36,8 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(17)
+}
+
+application {
+    mainClass.set("com.sidapps.tictactoeai.MyAppKt")
 }

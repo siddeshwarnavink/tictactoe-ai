@@ -1,8 +1,8 @@
 package com.sidapps.tictactoeai.view
 
-import javafx.scene.layout.VBox
+import javafx.scene.layout.GridPane
 import tornadofx.View
 
-class GameView : View() {
-    override val root: VBox by fxml("/GameView.fxml")
+class GameView : View("Tic-Tac-Toe") {
+    override val root: GridPane by fxml("/GameView.fxml")
 }
