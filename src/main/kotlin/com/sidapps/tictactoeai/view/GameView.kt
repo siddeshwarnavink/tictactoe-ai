@@ -13,6 +13,7 @@ import tornadofx.View
 class GameView : View("Tic-Tac-Toe") {
     private val playerLabel: Label by fxid("playerLabel")
     private val gameGrid: GridPane by fxid("gameGrid")
+    private var disableControls = false
 
     private val gameState = Gamestate(true, GameBoard())
 
@@ -52,11 +53,14 @@ class GameView : View("Tic-Tac-Toe") {
 
         val prediction = GameLogic.makePredictions(gameState)
         val prunedPrediction = GameLogic.alphaBetaPruning(prediction)
-
         gameState.gameBoard = prunedPrediction.value
+        val winner = GameLogic.checkWinner(gameState.gameBoard)
+        if (winner != CellState.EMPTY) {
+            playerLabel.text = "$winner won!"
+            disableControls = true
+        }
         gameState.isPlayer = !gameState.isPlayer
 
-        updatePlayerLabel()
         updateGameBoardButtons()
     }
 
@@ -67,6 +71,7 @@ class GameView : View("Tic-Tac-Toe") {
                     GridPane.getRowIndex(it) == rowIndex && GridPane.getColumnIndex(it) == colIndex
                 } as? Button
 
+                button?.isDisable = disableControls
                 if (gameState.gameBoard.getCellState(rowIndex - 1, colIndex) != CellState.EMPTY)
                     button?.text = gameState.gameBoard.getCellState(rowIndex - 1, colIndex).toString()
             }

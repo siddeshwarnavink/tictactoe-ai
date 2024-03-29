@@ -58,6 +58,11 @@ object GameLogic {
         return potentialWins
     }
 
+    fun checkWinner(gameBoard: GameBoard): CellState {
+        return if (checkWinner(gameBoard, CellState.X)) CellState.X
+        else if (checkWinner(gameBoard, CellState.O)) CellState.O
+        else CellState.EMPTY
+    }
 
     fun checkWinner(gameBoard: GameBoard, player: CellState): Boolean {
         // Rows
@@ -97,10 +102,7 @@ object GameLogic {
     fun makePredictions(gameState: Gamestate, depth: Int = 0, maxDepth: Int = 3): TreeNode<GameBoard> {
         val rootNode = TreeNode(gameState.gameBoard)
 
-        if (depth >= maxDepth
-            || checkWinner(gameState.gameBoard, CellState.X)
-            || checkWinner(gameState.gameBoard, CellState.O)
-        )
+        if (depth >= maxDepth || checkWinner(gameState.gameBoard) != CellState.EMPTY)
             return rootNode
 
         val currentPlayer = if (gameState.isPlayer) CellState.X else CellState.O
