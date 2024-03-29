@@ -158,7 +158,7 @@ object GameLogic {
         }
     }
 
-    fun alphaBetaPruning(node: TreeNode<GameBoard>, depth: Int): TreeNode<GameBoard> {
+    fun alphaBetaPruning(node: TreeNode<GameBoard>, depth: Int = 3): TreeNode<GameBoard> {
         var bestValue = Int.MIN_VALUE
         var bestChild: TreeNode<GameBoard>? = null
         val alpha = Int.MIN_VALUE

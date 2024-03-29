@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e634c509-537e-4df2-bc05-257ae0c03952" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controller/GameController.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/CellState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/CellState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/GameBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/GameBoard.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/Gamestate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/Gamestate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/TreeNode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/TreeNode.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/exception/NoPredictionException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/exception/NoPredictionException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/logic/GameLogic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/logic/GameLogic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/view/GameView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/view/GameView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GameView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GameView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/Gamestate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/Gamestate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/logic/GameLogic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/logic/GameLogic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/view/GameView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/view/GameView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

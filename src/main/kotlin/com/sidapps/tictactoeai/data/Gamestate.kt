@@ -1,3 +1,3 @@
 package com.sidapps.tictactoeai.data
 
-data class Gamestate(val isPlayer: Boolean, val gameBoard: GameBoard)
+data class Gamestate(var isPlayer: Boolean, var gameBoard: GameBoard)
