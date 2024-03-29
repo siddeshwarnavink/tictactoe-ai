@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e634c509-537e-4df2-bc05-257ae0c03952" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/view/GameView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/view/GameView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controller/GameController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/CellState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/CellState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/GameBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/GameBoard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/Gamestate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/Gamestate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/data/TreeNode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/data/TreeNode.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/exception/NoPredictionException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/exception/NoPredictionException.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/logic/GameLogic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/logic/GameLogic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/view/GameView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/view/GameView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/GameView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GameView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,28 +73,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build tictactoe-ai.executor": "Run",
-    "Gradle.GameLogicTest.executor": "Run",
-    "Gradle.tictactoe-ai [build].executor": "Run",
-    "Gradle.tictactoe-ai [clean].executor": "Run",
-    "Gradle.tictactoe-ai [jar].executor": "Run",
-    "Gradle.tictactoe-ai.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/siddeshwar/Documents/Coding/tictactoe-ai",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build tictactoe-ai.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GameLogicTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.tictactoe-ai [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.tictactoe-ai [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.tictactoe-ai [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.tictactoe-ai.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/siddeshwar/Documents/Coding/tictactoe-ai&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="logic" />
     </key>
@@ -99,7 +109,7 @@
   </component>
   <component name="RunManager">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sidapps.tictactoeai.MainKt" />
+      <option name="MAIN_CLASS_NAME" value="com.sidapps.tictactoeai.com.sidapps.tictactoeai.MainKt" />
       <module name="tictactoe-ai.main" />
       <shortenClasspath name="NONE" />
       <method v="2">
