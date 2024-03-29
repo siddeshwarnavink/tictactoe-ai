@@ -3,6 +3,7 @@ package com.sidapps.tictactoeai.view
 import com.sidapps.tictactoeai.data.CellState
 import com.sidapps.tictactoeai.data.GameBoard
 import com.sidapps.tictactoeai.data.Gamestate
+import com.sidapps.tictactoeai.exception.NoPredictionException
 import com.sidapps.tictactoeai.logic.GameLogic
 import javafx.scene.control.Button
 import javafx.scene.control.Label
@@ -51,6 +52,16 @@ class GameView : View("Tic-Tac-Toe") {
 
         gameState.isPlayer = !gameState.isPlayer
 
+        try {
+            processMoveResult()
+        } catch (e: NoPredictionException) {
+            handleNoPrediction()
+        }
+
+        updateGameBoardButtons()
+    }
+
+    private fun processMoveResult() {
         val prediction = GameLogic.makePredictions(gameState)
         val prunedPrediction = GameLogic.alphaBetaPruning(prediction)
         gameState.gameBoard = prunedPrediction.value
@@ -58,10 +69,21 @@ class GameView : View("Tic-Tac-Toe") {
         if (winner != CellState.EMPTY) {
             playerLabel.text = "$winner won!"
             disableControls = true
+        } else {
+            gameState.isPlayer = !gameState.isPlayer
+            updatePlayerLabel()
         }
-        gameState.isPlayer = !gameState.isPlayer
+    }
 
-        updateGameBoardButtons()
+    private fun handleNoPrediction() {
+        val winner = GameLogic.checkWinner(gameState.gameBoard)
+        if (winner != CellState.EMPTY) {
+            playerLabel.text = "$winner won!"
+            disableControls = true
+        } else {
+            playerLabel.text = "It's a Draw!"
+            disableControls = true
+        }
     }
 
     private fun updateGameBoardButtons() {

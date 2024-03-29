@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e634c509-537e-4df2-bc05-257ae0c03952" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/logic/GameLogic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/logic/GameLogic.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/view/GameView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/view/GameView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
