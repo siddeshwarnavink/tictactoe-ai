@@ -1,4 +1,4 @@
-package com.sidapps.tictactoeai.com.sidapps.tictactoeai
+package com.sidapps.tictactoeai
 
 import com.sidapps.tictactoeai.view.GameView
 import javafx.stage.Stage
