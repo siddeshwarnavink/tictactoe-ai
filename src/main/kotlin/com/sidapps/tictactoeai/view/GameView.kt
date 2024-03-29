@@ -5,14 +5,24 @@ import com.sidapps.tictactoeai.data.GameBoard
 import com.sidapps.tictactoeai.data.Gamestate
 import com.sidapps.tictactoeai.exception.NoPredictionException
 import com.sidapps.tictactoeai.logic.GameLogic
+import com.sidapps.tictactoeai.logic.WebBrowser
+import javafx.application.Platform
+import javafx.scene.control.Alert
+import javafx.scene.control.Alert.AlertType
 import javafx.scene.control.Button
+import javafx.scene.control.Hyperlink
 import javafx.scene.control.Label
+import javafx.scene.layout.BorderPane
 import javafx.scene.layout.GridPane
-import javafx.scene.layout.StackPane
+import javafx.scene.layout.VBox
 import javafx.scene.text.Font
 import tornadofx.View
+import java.awt.Desktop
+import java.net.URI
 
 class GameView : View("Tic-Tac-Toe") {
+    override val root: BorderPane by fxml("/GameView.fxml")
+
     private val playerLabel: Label by fxid("playerLabel")
     private val gameGrid: GridPane by fxid("gameGrid")
     private val resetButton: Button by fxid("resetButton")
@@ -20,7 +30,6 @@ class GameView : View("Tic-Tac-Toe") {
     private var gameState = Gamestate(true, GameBoard())
     private var disableControls = false
 
-    override val root: StackPane by fxml("/GameView.fxml")
 
     init {
         updatePlayerLabel()
@@ -53,12 +62,34 @@ class GameView : View("Tic-Tac-Toe") {
         }
     }
 
-    private fun handleReset () {
+    fun handleQuit() {
+        Platform.exit()
+    }
+
+    fun handleReset() {
         disableControls = false
-        gameState =  Gamestate(true, GameBoard())
+        gameState = Gamestate(true, GameBoard())
         updateResetButton()
         updatePlayerLabel()
         updateGameBoardButtons(true)
+    }
+
+    fun handleAbout() {
+        val alert = Alert(AlertType.INFORMATION)
+        alert.title = "About"
+        alert.headerText = "Sample project by Siddeshwar"
+
+        val hyperlink = Hyperlink("View on Github")
+        hyperlink.setOnAction {
+            WebBrowser.open("https://github.com/siddeshwarnavink/tictactoe-ai")
+        }
+
+        val contentBox = VBox()
+        contentBox.spacing = 10.0
+        contentBox.children.add(hyperlink)
+        alert.dialogPane.content = contentBox
+
+        alert.showAndWait()
     }
 
     private fun handleButtonClick(row: Int, col: Int, button: Button) {
