@@ -7,6 +7,7 @@
     <list default="true" id="e634c509-537e-4df2-bc05-257ae0c03952" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/view/GameView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/sidapps/tictactoeai/view/GameView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GameView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GameView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -3,7 +3,7 @@ package com.sidapps.tictactoeai.data
 enum class CellState {
     EMPTY {
         override fun toString(): String {
-            return "-"
+            return "   "
         }
     },
     X {

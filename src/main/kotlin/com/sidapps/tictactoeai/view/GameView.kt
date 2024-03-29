@@ -8,21 +8,31 @@ import com.sidapps.tictactoeai.logic.GameLogic
 import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.scene.layout.GridPane
+import javafx.scene.layout.StackPane
 import javafx.scene.text.Font
 import tornadofx.View
 
 class GameView : View("Tic-Tac-Toe") {
     private val playerLabel: Label by fxid("playerLabel")
     private val gameGrid: GridPane by fxid("gameGrid")
+    private val resetButton: Button by fxid("resetButton")
+
+    private var gameState = Gamestate(true, GameBoard())
     private var disableControls = false
 
-    private val gameState = Gamestate(true, GameBoard())
-
-    override val root: GridPane by fxml("/GameView.fxml")
+    override val root: StackPane by fxml("/GameView.fxml")
 
     init {
         updatePlayerLabel()
         initializeGameButtons()
+        updateResetButton()
+        resetButton.setOnAction {
+            handleReset()
+        }
+    }
+
+    private fun updateResetButton() {
+        resetButton.visibleProperty().set(disableControls)
     }
 
     private fun updatePlayerLabel() {
@@ -43,6 +53,14 @@ class GameView : View("Tic-Tac-Toe") {
         }
     }
 
+    private fun handleReset () {
+        disableControls = false
+        gameState =  Gamestate(true, GameBoard())
+        updateResetButton()
+        updatePlayerLabel()
+        updateGameBoardButtons(true)
+    }
+
     private fun handleButtonClick(row: Int, col: Int, button: Button) {
         if (!gameState.isPlayer || gameState.gameBoard.getCellState(row, col) != CellState.EMPTY)
             return
@@ -59,6 +77,7 @@ class GameView : View("Tic-Tac-Toe") {
         }
 
         updateGameBoardButtons()
+        updateResetButton()
     }
 
     private fun processMoveResult() {
@@ -86,7 +105,7 @@ class GameView : View("Tic-Tac-Toe") {
         }
     }
 
-    private fun updateGameBoardButtons() {
+    private fun updateGameBoardButtons(hardReset: Boolean = false) {
         for (rowIndex in 1..3) {
             for (colIndex in 0..2) {
                 val button = gameGrid.children.firstOrNull {
@@ -94,7 +113,7 @@ class GameView : View("Tic-Tac-Toe") {
                 } as? Button
 
                 button?.isDisable = disableControls
-                if (gameState.gameBoard.getCellState(rowIndex - 1, colIndex) != CellState.EMPTY)
+                if (hardReset || gameState.gameBoard.getCellState(rowIndex - 1, colIndex) != CellState.EMPTY)
                     button?.text = gameState.gameBoard.getCellState(rowIndex - 1, colIndex).toString()
             }
         }
